@@ -1,0 +1,22 @@
+Scope: global
+  School       | kind=class      | type=null       | access=public     | parent=global     | abstract=false | value=null            | params=[] | interfaces=[]
+  Playable     | kind=interface  | type=null       | access=default    | parent=global     | abstract=true  | value=null            | params=[] | interfaces=[]
+  Game         | kind=class      | type=null       | access=public     | parent=global     | abstract=false | value=null            | params=[] | interfaces=[Playable]
+  Scope: class-School
+    name         | kind=variable   | type=String     | access=private    | parent=class-School | abstract=false | value=name            | params=[] | interfaces=[]
+    studentCount | kind=variable   | type=int        | access=private    | parent=class-School | abstract=false | value=0               | params=[] | interfaces=[]
+    isOpen       | kind=variable   | type=boolean    | access=public     | parent=class-School | abstract=false | value=true            | params=[] | interfaces=[]
+    School       | kind=constructor | type=School     | access=public     | parent=class-School | abstract=false | value=static=false    | params=[name         | kind=parameter  | type=String     | access=default    | parent=class-School | abstract=false | value=null            | params=[] | interfaces=[]] | interfaces=[]
+    addStudent   | kind=method     | type=void       | access=public     | parent=class-School | abstract=false | value=static=false    | params=[studentName  | kind=parameter  | type=String     | access=default    | parent=class-School | abstract=false | value=null            | params=[] | interfaces=[]] | interfaces=[]
+    getStudentCount | kind=method     | type=int        | access=public     | parent=class-School | abstract=false | value=static=false    | params=[] | interfaces=[]
+    toggleOpen   | kind=method     | type=void       | access=public     | parent=class-School | abstract=false | value=static=false    | params=[] | interfaces=[]
+    main         | kind=method     | type=void       | access=public     | parent=class-School | abstract=false | static=true | value=null            | params=[args         | kind=parameter  | type=String[]   | access=default    | parent=class-School | abstract=false | value=null            | params=[] | interfaces=[]] | interfaces=[]
+    Scope: method-main
+      mySchool     | kind=variable   | type=School     | access=default    | parent=method-main | abstract=false | value=new School("Greenwood") | params=[] | interfaces=[]
+      i            | kind=variable   | type=int        | access=default    | parent=method-main | abstract=false | value=0               | params=[] | interfaces=[]
+  Scope: interface-Playable
+    play         | kind=method     | type=void       | access=public     | parent=null       | abstract=true  | value=static=false    | params=[] | interfaces=[]
+  Scope: class-Game
+    title        | kind=variable   | type=String     | access=private    | parent=class-Game | abstract=false | value=title           | params=[] | interfaces=[]
+    Game         | kind=constructor | type=Game       | access=public     | parent=class-Game | abstract=false | value=static=false    | params=[title        | kind=parameter  | type=String     | access=default    | parent=class-Game | abstract=false | value=null            | params=[] | interfaces=[]] | interfaces=[]
+    play         | kind=method     | type=void       | access=public     | parent=class-Game | abstract=false | value=static=false    | params=[] | interfaces=[]

@@ -6,7 +6,7 @@ import java.io.FileWriter;
 public class Code {
     public static void main(String[] args) throws Exception {
         String code = new String(Files.readAllBytes(Paths.get("Code.java")));
-        Language lexer = new Language(CharStreams.fromString(code));
+        LanguageLexer lexer = new LanguageLexer(CharStreams.fromString(code));
         Token t;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("tokens.txt"))) {
