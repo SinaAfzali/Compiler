@@ -1,0 +1,1 @@
+java -cp ".;D:\University\semester 4\Theory of formal languages and autamata\Antler\antlr-4.8-complete.jar" org.antlr.v4.Tool %*
