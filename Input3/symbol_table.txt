@@ -1,0 +1,18 @@
+=== SYMBOL TABLE (Full Project Spec) ===
+Name	| Type	| Kind	| Scope	| Visibility	| Parent	| Interfaces	| IsAbstract	| IsOverride	| Params	| InitialValue
+---------------------------------------------------------------------------------------------------------------------------------------------------
+MainClass	| class	| class	| class_MainClass	| public	| 	| 	| false	| false	| 	| 
+args	| String[]	| parameter	| method_main	| 	| 	| 	| false	| false	| 	| 
+flag	| boolean	| variable	| method_main	| 	| 	| 	| false	| false	| 	| true
+i	| int	| variable	| method_main	| 	| 	| 	| false	| false	| 	| 0
+main	| void	| method	| class_MainClass	| public	| 	| 	| false	| false	| String[] args	| 
+ImplClass	| class	| class	| class_ImplClass	| 	| 	| MyInterface	| false	| false	| 	| 
+interfaceMethod	| void	| method	| class_ImplClass	| public	| 	| 	| false	| false	| boolean b, String s	| 
+b	| boolean	| parameter	| method_interfaceMethod	| 	| 	| 	| false	| false	| 	| 
+s	| String	| parameter	| method_interfaceMethod	| 	| 	| 	| false	| false	| 	| 
+INTERFACE_FIELD	| int	| interface_field	| interface_MyInterface	| public	| 	| 	| false	| false	| 	| 42+10
+interfaceMethod	| void	| interface_method	| interface_MyInterface	| public	| 	| 	| true	| false	| boolean b, String s	| 
+MyInterface	| interface	| interface	| interface_MyInterface	| public	| 	| 	| false	| false	| 	| 
+b	| boolean	| parameter	| interface_method_interfaceMethod	| 	| 	| 	| false	| false	| 	| 
+s	| String	| parameter	| interface_method_interfaceMethod	| 	| 	| 	| false	| false	| 	| 
+Total symbols: 14

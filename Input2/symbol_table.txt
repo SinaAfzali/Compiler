@@ -1,0 +1,23 @@
+=== SYMBOL TABLE (Full Project Spec) ===
+Name	| Type	| Kind	| Scope	| Visibility	| Parent	| Interfaces	| IsAbstract	| IsOverride	| Params	| InitialValue
+---------------------------------------------------------------------------------------------------------------------------------------------------
+MainClass	| class	| class	| class_MainClass	| public	| 	| 	| false	| false	| 	| 
+testMethod	| void	| method	| class_MyAbstractClass	| public	| 	| 	| false	| true	| int p	| 
+args	| String[]	| parameter	| method_main	| 	| 	| 	| false	| false	| 	| 
+x	| int	| variable	| method_main	| 	| 	| 	| false	| false	| 	| 5
+main	| void	| method	| class_MainClass	| public	| 	| 	| false	| false	| String[] args	| 
+BaseClass	| class	| class	| class_BaseClass	| 	| 	| 	| true	| false	| 	| 
+baseField	| int	| field	| class_BaseClass	| protected	| 	| 	| false	| false	| 	| 
+abstractField	| String	| field	| class_MyAbstractClass	| private	| 	| 	| false	| false	| 	| 
+MyAbstractClass	| constructor	| constructor	| class_MyAbstractClass	| public	| 	| 	| false	| false	| String paramName, int paramInt	| 
+paramInt	| int	| parameter	| ctor_MyAbstractClass	| 	| 	| 	| false	| false	| 	| 
+paramName	| String	| parameter	| ctor_MyAbstractClass	| 	| 	| 	| false	| false	| 	| 
+p	| int	| parameter	| method_testMethod	| 	| 	| 	| false	| false	| 	| 
+local	| int	| variable	| method_testMethod	| 	| 	| 	| false	| false	| 	| p+10
+TestInterface	| interface	| interface	| interface_TestInterface	| public	| 	| 	| false	| false	| 	| 
+testMethod	| void	| interface_method	| interface_TestInterface	| public	| 	| 	| true	| false	| int p	| 
+TEST_CONST	| int	| interface_field	| interface_TestInterface	| public	| 	| 	| false	| false	| 	| 100
+p	| int	| parameter	| interface_method_testMethod	| 	| 	| 	| false	| false	| 	| 
+anotherMethod	| void	| interface_method	| interface_AnotherInterface	| public	| 	| 	| true	| false	| 	| 
+AnotherInterface	| interface	| interface	| interface_AnotherInterface	| public	| 	| 	| false	| false	| 	| 
+Total symbols: 19

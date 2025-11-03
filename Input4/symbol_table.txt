@@ -1,0 +1,21 @@
+=== SYMBOL TABLE (Full Project Spec) ===
+Name	| Type	| Kind	| Scope	| Visibility	| Parent	| Interfaces	| IsAbstract	| IsOverride	| Params	| InitialValue
+---------------------------------------------------------------------------------------------------------------------------------------------------
+MainClass	| class	| class	| class_MainClass	| public	| 	| 	| false	| false	| 	| 
+arrayMethod	| void	| method	| class_ArrayClass	| public	| 	| 	| false	| false	| int[] paramArr	| 
+args	| String[]	| parameter	| method_main	| 	| 	| 	| false	| false	| 	| 
+arr	| int[]	| variable	| method_main	| 	| 	| 	| false	| false	| 	| newint[5]
+intArr	| int[]	| variable	| method_main	| 	| 	| 	| false	| false	| 	| {1,2,3}
+minusVal	| int	| variable	| method_main	| 	| 	| 	| false	| false	| 	| -powVal
+main	| void	| method	| class_MainClass	| public	| 	| 	| false	| false	| String[] args	| 
+powVal	| int	| variable	| method_main	| 	| 	| 	| false	| false	| 	| 2**3
+ArrayClass	| constructor	| constructor	| class_ArrayClass	| public	| 	| 	| false	| false	| int size	| 
+fieldArr	| int[]	| field	| class_ArrayClass	| private	| 	| 	| false	| false	| 	| 
+size	| int	| parameter	| ctor_ArrayClass	| 	| 	| 	| false	| false	| 	| 
+paramArr	| int[]	| parameter	| method_arrayMethod	| 	| 	| 	| false	| false	| 	| 
+localArr	| int[]	| variable	| method_arrayMethod	| 	| 	| 	| false	| false	| 	| newint[3]
+ArrayInterface	| interface	| interface	| interface_ArrayInterface	| public	| 	| 	| false	| false	| 	| 
+IF_FIELD	| char[]	| interface_field	| interface_ArrayInterface	| public	| 	| 	| false	| false	| 	| newchar[2]
+ifMethod	| void	| interface_method	| interface_ArrayInterface	| public	| 	| 	| true	| false	| String[] sArr	| 
+sArr	| String[]	| parameter	| interface_method_ifMethod	| 	| 	| 	| false	| false	| 	| 
+Total symbols: 17

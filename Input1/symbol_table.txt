@@ -1,0 +1,19 @@
+=== SYMBOL TABLE (Full Project Spec) ===
+Name	| Type	| Kind	| Scope	| Visibility	| Parent	| Interfaces	| IsAbstract	| IsOverride	| Params	| InitialValue
+---------------------------------------------------------------------------------------------------------------------------------------------------
+myMethod	| void	| method	| class_MyClass	| 	| 	| 	| false	| false	| int a	| 
+MainClass	| class	| class	| class_MainClass	| public	| 	| 	| false	| false	| 	| 
+args	| String[]	| parameter	| method_main	| 	| 	| 	| false	| false	| 	| 
+x	| int	| variable	| method_main	| 	| 	| 	| false	| false	| 	| 5
+main	| void	| method	| class_MainClass	| public	| 	| 	| false	| false	| String[] args	| 
+MyClass	| constructor	| constructor	| class_MyClass	| 	| 	| 	| false	| false	| int param1	| 
+field1	| int	| field	| class_MyClass	| 	| 	| 	| false	| false	| 	| 
+field2	| String	| field	| class_MyClass	| 	| 	| 	| false	| false	| 	| 
+param1	| int	| parameter	| ctor_MyClass	| 	| 	| 	| false	| false	| 	| 
+a	| int	| parameter	| method_myMethod	| 	| 	| 	| false	| false	| 	| 
+localVar	| int	| variable	| method_myMethod	| 	| 	| 	| false	| false	| 	| a*2
+INTERFACE_FIELD	| int	| interface_field	| interface_MyInterface	| public	| 	| 	| false	| false	| 	| 42
+interfaceMethod	| void	| interface_method	| interface_MyInterface	| public	| 	| 	| true	| false	| String list	| 
+MyInterface	| interface	| interface	| interface_MyInterface	| public	| 	| 	| false	| false	| 	| 
+list	| String	| parameter	| interface_method_interfaceMethod	| 	| 	| 	| false	| false	| 	| 
+Total symbols: 15
