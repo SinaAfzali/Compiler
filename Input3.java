@@ -1,37 +1,52 @@
 class MainClass {
     public static void main(String[] args) {
-        boolean flag = true;
-        int i = 0;
-        if (i < 5) {
-            while (flag) {
-                i = i + 1;
-                if (i == 3) {
-                    flag = false;
-                } else {
-                    print(i);
-                }
-                if (i > 2) break;
-            }
-        } else {
-            for (int j = 0; j < 2; j = j + 1) {
-                print(j);
-                continue;
-            }
+        // خطا: عدم تطابق نوع در انتساب (int = String)
+        int x = "hello";
+        
+        // خطا: عدم تطابق نوع در انتساب (boolean = int)
+        boolean flag = 5;
+        
+        // خطا: عدم تطابق نوع در انتساب (String = int)
+        String str = 42;
+        
+        // خطا: استفاده از متغیر اعلان نشده
+        int y = undefinedVar + 10;
+        
+        // خطا: استفاده از متغیر در اسکوپ غیرمجاز
+        if (true) {
+            int localVar = 5;
         }
-        read(i);
+        // خطا: localVar در این اسکوپ قابل دسترسی نیست
+        print(localVar);
+        
+        // خطا: استفاده از متغیر به عنوان آرگومان که اعلان نشده
+        print(anotherUndefined);
     }
 }
 
-class ImplClass implements MyInterface {
-    public void interfaceMethod(boolean b, String s) {
-        if (b && s.length > 0) {
-            print(s);
-        }
+class ScopeTest {
+    private int privateField;
+    public int publicField;
+    
+    public void testMethod() {
+        int localVar = 10;
+        
+        // خطا: عدم تطابق نوع در انتساب (int = boolean)
+        localVar = true;
+        
+        // خطا: عدم تطابق نوع در انتساب (int = String)
+        privateField = "wrong";
     }
 }
 
-interface MyInterface {
-    int INTERFACE_FIELD = 42 + 10;
-
-    void interfaceMethod(boolean b, String s);
+class AnotherClass {
+    public void accessTest() {
+        ScopeTest obj = new ScopeTest();
+        
+        // خطا: دسترسی به فیلد private از خارج کلاس
+        int val = obj.privateField;
+        
+        // این درست است
+        int val2 = obj.publicField;
+    }
 }

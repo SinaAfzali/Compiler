@@ -36,6 +36,9 @@ public class Main {
             System.out.println("\nTASK 2: SYMBOL TABLE CONSTRUCTION");
             SymbolTableBuilder.buildAndPrint(inputFile, outputDir);
 
+            System.out.println("\nTASK 3: SEMANTIC ANALYSIS");
+            SemanticAnalyzer.analyze(inputFile, outputDir);
+
             fileNum++;
         }
     }
