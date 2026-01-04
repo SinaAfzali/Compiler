@@ -304,28 +304,34 @@ public class SemanticAnalyzer {
      * متد استاتیک برای تحلیل فایل
      * این متد جدول نماد را از LanguageVisitorImpl می‌گیرد
      */
-    public static void analyze(String inputFile, String outputDir) throws Exception {
-        InputStream is = new FileInputStream(inputFile);
-        
-        LanguageLexer lexer = new LanguageLexer(CharStreams.fromStream(is));
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        LanguageParser parser = new LanguageParser(tokens);
-        ParseTree tree = parser.program();
-        
-        if (parser.getNumberOfSyntaxErrors() > 0) {
-            System.err.println("خطاهای نحوی یافت شد. تحلیل معنایی انجام نمی‌شود.");
-            return;
+    public static void analyze(String inputFile, String outputDir) {
+        try {
+            InputStream is = new FileInputStream(inputFile);
+            
+            LanguageLexer lexer = new LanguageLexer(CharStreams.fromStream(is));
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            LanguageParser parser = new LanguageParser(tokens);
+            ParseTree tree = parser.program();
+            
+            // استفاده از جدول نماد تولید شده توسط LanguageVisitorImpl
+            LanguageVisitorImpl visitor = new LanguageVisitorImpl();
+            visitor.visit(tree);
+            Scope symbolTable = visitor.getSymbolTable();
+            
+            // تحلیل معنایی بر اساس جدول نماد
+            SemanticAnalyzer analyzer = new SemanticAnalyzer(symbolTable, tree);
+            analyzer.analyze();
+            analyzer.printErrors(outputDir);
+        } catch (Exception e) {
+            System.err.println("خطا در تحلیل معنایی: " + e.getMessage());
+            e.printStackTrace();
+            // حتی در صورت بروز exception، فایل semantic_errors.txt را تولید می‌کنیم
+            try (PrintWriter writer = new PrintWriter(outputDir + "/semantic_errors.txt", "UTF-8")) {
+                writer.println("خطا در تحلیل معنایی: " + e.getMessage());
+            } catch (Exception ex) {
+                System.err.println("خطا در نوشتن فایل خطاها: " + ex.getMessage());
+            }
         }
-        
-        // استفاده از جدول نماد تولید شده توسط LanguageVisitorImpl
-        LanguageVisitorImpl visitor = new LanguageVisitorImpl();
-        visitor.visit(tree);
-        Scope symbolTable = visitor.getSymbolTable();
-        
-        // تحلیل معنایی بر اساس جدول نماد
-        SemanticAnalyzer analyzer = new SemanticAnalyzer(symbolTable, tree);
-        analyzer.analyze();
-        analyzer.printErrors(outputDir);
     }
     
     // Inner class for semantic errors
